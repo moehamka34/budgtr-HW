@@ -9,7 +9,7 @@ app.use(express.static('public'));
 
 // index
 app.get('/budgets', (req, res) => {
-    res.render('index.ejs')
+    res.render('index.ejs', { allBudget: budget});
 })
 
 // new
