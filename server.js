@@ -18,9 +18,9 @@ app.get('/budgets/new' ,(req, res) =>{
 })
 
 // show
-app.get('/budgets/:index', (req, res) =>{
-    res.send(budget[req.params.index])
-})
+app.get('/budgets/id', (req, res) =>{
+    res.render('show.ejs',{ budgets: budget[req.params.id]});
+});
 
 // Post
 app.post("/budgets", (req, res) => {
