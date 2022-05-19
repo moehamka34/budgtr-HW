@@ -3,15 +3,13 @@ const app =express()
  
 const budget = require('./models/budget')
 
+//middleware
+app.use(express.static('public'));
 
-
-app.get("/", (req,res) => {
-    res.send("Budgtr HW")
-})
 
 // index
-app.get('/budgets', (req, res) =>{
-    res.send(budget)
+app.get('/budgets', (req, res) => {
+    res.render('index.ejs')
 })
 
 // new
@@ -28,10 +26,6 @@ app.get('/budgets/:index', (req, res) =>{
 app.post("/budgets", (req, res) => {
     res.send("hi")
   })
-
-
-
-
 
 
 app.listen(3000, () => {
