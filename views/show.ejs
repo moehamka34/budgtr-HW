@@ -9,7 +9,18 @@
     <link rel="stylesheet" href="/skeleton.css" />
 </head>
 <body>
-    <h1><%= budget.name %> Show Page</h1>
-    <p>This is a <%= budget.name %> name</p>
+    <div class ="container">
+        <h1><%= budgets.name %></h1>
+
+        <a href="/budgets"><button>Back to Budgtr</button></a>
+
+
+        <p>Date: <%= budgets.date %>  <p>
+        <p>From: <%= budgets.from %> <p>
+        <p>Amount: <%= budgets.amount %> </p>
+        <p>Tags: <%= budgets.tags %> </p>
+        
+       
+    </div>
 </body>
 </html>

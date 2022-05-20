@@ -12,18 +12,31 @@
 </head>
 
 <body>
-     <div class="container">
-        <h1>Budgtr ALL</h1>
+    
+    
+     
+    
+        <div class="container">
+            <h1>Budgtr ALL</h1>
+
+            <nav>
+                <a href="/budgets/New"><button>Create a new Budget</button></a>
+            </nav>
+           
         
-             <% for (let i=0; i < allBudget.length; i++) { %> 
-                <td>   <table>
-                     <td> <tr><%= allBudget[i].date %></tr> 
-                 <a href="/budget/<%= i %>">
-                    <%= allBudget[i].name %> 
-                </a> 
-                 <tr><%= allBudget[i].amount %></tr> </td>
-                <% } %> 
-        </table> </td>
+
+         <td><% for (let index = 0; index < allBudget.length; index++) { %></td>  
+             <table>   
+                    
+                         <td><%=  allBudget[index].date; %></td>
+                         <td><a href="/budgets/<%= index %>"> <%=  allBudget[index].name; %></a></td>
+                         <td><%=  allBudget[index].amount; %></td> 
+                    
+                <%} 
+            %>
+            </table>
+        </div>
+    </tr>
     </div> 
 </body>
 

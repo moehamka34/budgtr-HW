@@ -5,6 +5,7 @@ const budget = require('./models/budget')
 
 //middleware
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }));
 
 
 // index
@@ -18,13 +19,15 @@ app.get('/budgets/new' ,(req, res) =>{
 })
 
 // show
-app.get('/budgets/id', (req, res) =>{
+app.get('/budgets/:id', (req, res) =>{
     res.render('show.ejs',{ budgets: budget[req.params.id]});
 });
 
 // Post
 app.post("/budgets", (req, res) => {
-    res.send("hi")
+    budget.push(req.body)
+    console.log(budget)
+    res.redirect("/budgets") 
   })
 
 
